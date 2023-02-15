@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: srcpythonhelloworld-path-to-kubernetes-oqog
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: srcpythonhelloworld-path-to-kubernetes-oqog
+    app.kubernetes.io/part-of: my-app-7
+  name: srcpythonhelloworld-path-to-kubernetes-oqog
+  namespace: jkopriva-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: srcpythonhelloworld-path-to-kubernetes-oqog
+    weight: 100
+status: {}
